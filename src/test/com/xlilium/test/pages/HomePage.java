@@ -1,4 +1,4 @@
-package com.xlilium.test.pages;
+package test.com.xlilium.test.pages;
 
 import com.xlilium.base.BasePage;
 import org.openqa.selenium.WebElement;
