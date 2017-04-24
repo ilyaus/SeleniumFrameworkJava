@@ -4,6 +4,7 @@ import com.xlilium.base.BrowserType;
 import com.xlilium.base.DriverContext;
 import com.xlilium.base.FrameworkInitialize;
 import com.xlilium.utilities.ExcelUtil;
+import com.xlilium.utilities.LogUtil;
 import org.junit.Before;
 import org.junit.Test;
 import test.com.xlilium.test.pages.HomePage;
@@ -14,8 +15,12 @@ public class LoginTest extends FrameworkInitialize {
     @Before
     public void Initialize() {
 
+        LogUtil logUtil = new LogUtil();
+        logUtil.CreateLogFile();
+        logUtil.Write("Initializing framework");
+
         try {
-            ExcelUtil excelUtil = new ExcelUtil("D:\\Projects\\SeleniumFrameworkJava\\data.xls");
+            ExcelUtil excelUtil = new ExcelUtil("c:\\Projects\\SeleniumFrameworkJava\\data.xls");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -32,6 +37,7 @@ public class LoginTest extends FrameworkInitialize {
 
         Thread.sleep(2000);
 
-        CurrentPage.As(LoginPage.class).Login(ExcelUtil.ReadCell(0, 1), ExcelUtil.ReadCell(1,1));
+        //CurrentPage.As(LoginPage.class).Login("admin", "password");
+        CurrentPage  = CurrentPage.As(LoginPage.class).Login(ExcelUtil.ReadCell(0, 1), ExcelUtil.ReadCell(1,1));
     }
 }

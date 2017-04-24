@@ -8,7 +8,6 @@ import org.openqa.selenium.support.How;
 public class HomePage extends BasePage {
 
     public HomePage() {
-
     }
 
     @FindBy(how = How.LINK_TEXT, using = "Login")

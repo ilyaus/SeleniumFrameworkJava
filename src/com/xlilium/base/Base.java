@@ -1,6 +1,6 @@
 package com.xlilium.base;
 
-import org.openqa.selenium.support.PageFactory;
+        import org.openqa.selenium.support.PageFactory;
 
 public class Base {
 
@@ -13,7 +13,8 @@ public class Base {
         return page.cast(obj);
     }
 
-    public <TPage extends BasePage> TPage As(Class<TPage> pageInstance) {
+
+    public <TPage extends BasePage> TPage As(Class<TPage> currentInstance) {
         try {
             return (TPage)this;
         }
