@@ -1,10 +1,10 @@
 package com.xlilium.base;
 
-        import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.PageFactory;
 
 public class Base {
 
-    public static BasePage CurrentPage;
+    public static BasePage currentPage;
 
     public <TPage extends BasePage> TPage GetInstance(Class<TPage> page) {
 

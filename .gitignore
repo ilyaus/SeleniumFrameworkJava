@@ -13,3 +13,12 @@ hs_err_pid*
 
 .idea/
 *.iml
+
+*.log
+*.ctxt
+
+*.zip
+*.tar.gz
+*.rar
+
+target/

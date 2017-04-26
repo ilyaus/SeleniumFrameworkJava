@@ -1,7 +1,13 @@
 package com.xlilium.config;
 
-/**
- * Created by ilya on 3/7/2017.
- */
+import com.xlilium.base.BrowserType;
+import com.xlilium.utilities.LogUtil;
+
 public class Settings {
+    public static String logPath;
+    public static String excelPath;
+    public static String webDriverPath;
+    public static BrowserType browserType;
+
+    public static LogUtil logUtil;
 }
