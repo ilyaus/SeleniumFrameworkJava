@@ -1,6 +1,7 @@
 package test.com.xlilium.test.features.steps;
 
 import com.xlilium.base.Base;
+import com.xlilium.utilities.CucumberUtil;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,7 +10,6 @@ import org.junit.Assert;
 import test.com.xlilium.test.pages.HomePage;
 import test.com.xlilium.test.pages.LoginPage;
 
-import java.util.List;
 
 public class LoginSteps extends Base{
 
@@ -27,8 +27,10 @@ public class LoginSteps extends Base{
 
     @When("^I enter UserName and Password$")
     public void iEnterUserNameAndPassword(DataTable data) throws Throwable {
-        List<List<String>> table = data.raw();
-        currentPage.As(LoginPage.class).EnterLogin(table.get(1).get(0), table.get(1).get(1));
+        CucumberUtil.ConvertDataTableToDict(data);
+
+        currentPage.As(LoginPage.class).EnterLogin(CucumberUtil.GetCellValue("UserName"), CucumberUtil.GetCellValue("Password"));
+        //currentPage.As(LoginPage.class).EnterLogin(table.get(1).get(0), table.get(1).get(1));
     }
 
     @Then("^I click login button$")

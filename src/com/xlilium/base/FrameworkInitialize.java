@@ -11,12 +11,12 @@ public class FrameworkInitialize extends Base {
 
         switch (browserType) {
             case Chrome:
-                System.setProperty("webdriver.chrome.driver", "C:\\tools\\selenium\\webdrivers\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "d:\\tools\\selenium\\webdrivers\\chromedriver.exe");
                 driver = new ChromeDriver();
 
                 break;
             case Firefox:
-                System.setProperty("webdriver.gecko.driver","C:\\tools\\selenium\\webdrivers\\geckodriver-v0.16.0.exe");
+                System.setProperty("webdriver.gecko.driver","d:\\tools\\selenium\\webdrivers\\geckodriver-v0.16.0.exe");
                 driver = new FirefoxDriver();
                 break;
         }
